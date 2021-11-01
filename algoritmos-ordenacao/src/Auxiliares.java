@@ -16,12 +16,18 @@ public class Auxiliares {
 			}else if(v[j] > pivot) {
 				j--;
 			}else if(i <= j) {
-				trocar(v,i,j);
+				//trocar(v,i,j);
+				int aux = v[i];
+				v[i] = v[j];
+				v[j] = aux;
 				i++;
 				j--;
 			}
 		}
-		trocar(v,esq,j);
+		//trocar(v,esq,j);
+		int aux = v[esq];
+		v[esq] = v[j];
+		v[j] = aux;
 		return j;
 	}
 	public void merge(int[] v, int [] l, int [] r) {
@@ -52,5 +58,26 @@ public class Auxiliares {
 		}
 		
 	}
+	public void heapify( int v[],  int n,  int i) {
+        // Encontra o maior entre raiz, o filho esquerdo e o filho direito.
+        int largest = i;
+        final int l = 2 * i + 1;
+        final int r = 2 * i + 2;
+
+        if (l < n && v[l] > v[largest])
+            largest = l;
+
+        if (r < n && v[r] > v[largest])
+            largest = r;
+
+        // faz a substituicao e continua empilhando caso a raiz nao seja o maior.
+        if (largest != i) {
+            final int swap = v[i];
+            v[i] = v[largest];
+            v[largest] = swap;
+
+            heapify(v, n, largest);
+        }
+    }
 	
 }
