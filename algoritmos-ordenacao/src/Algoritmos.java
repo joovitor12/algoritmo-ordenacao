@@ -120,7 +120,7 @@ public class Algoritmos {
 
         // Heap Sort
         for (int i = n - 1; i >= 0; i--) {
-            final int temp = v[0];
+            int temp = v[0];
             v[0] = v[i];
             v[i] = temp;
 

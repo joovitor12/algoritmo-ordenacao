@@ -7,7 +7,8 @@ public class main {
 		Scanner in = new Scanner(System.in);
 		int[] n;
 		int tamanho;
-		Algoritmos i = new Algoritmos();
+		Auxiliares i = new Auxiliares();
+		Algoritmos a = new Algoritmos();
 		int op;
 		do {
 			menu();
@@ -21,7 +22,7 @@ public class main {
 				System.out.println("ANTES DA ORDENACAO");
 				System.out.println(Arrays.toString(n));
 				System.out.println("APOS A ORDENACAO");
-				i.insertionSort(n);
+				a.insertionSort(n);
 				System.out.println(Arrays.toString(n));
 				break;
 			case 2:
@@ -32,7 +33,7 @@ public class main {
 				System.out.println("ANTES DA ORDENACAO");
 				System.out.println(Arrays.toString(n));
 				System.out.println("APOS A ORDENACAO");
-				i.selectionSort(n);
+				a.selectionSort(n);
 				System.out.println(Arrays.toString(n));
 				break;
 			case 3:
@@ -43,7 +44,7 @@ public class main {
 				System.out.println("ANTES DA ORDENACAO");
 				System.out.println(Arrays.toString(n));
 				System.out.println("APOS A ORDENACAO");
-				i.mergeSort(n);
+				a.mergeSort(n);
 				System.out.println(Arrays.toString(n));
 				break;
 			case 4:
@@ -54,7 +55,7 @@ public class main {
 				System.out.println("ANTES DA ORDENACAO");
 				System.out.println(Arrays.toString(n));
 				System.out.println("APOS A ORDENACAO");
-				i.quickSort(n, 0, n.length - 1);
+				a.quickSort(n, 0, n.length - 1);
 				System.out.println(Arrays.toString(n));
 				break;
 			case 5:
@@ -65,7 +66,7 @@ public class main {
 				System.out.println("ANTES DA ORDENACAO");
 				System.out.println(Arrays.toString(n));
 				System.out.println("APOS A ORDENACAO");
-				i.bubbleSort(n);
+				a.bubbleSort(n);
 				System.out.println(Arrays.toString(n));
 				break;
 			case 6:
@@ -76,7 +77,7 @@ public class main {
 				System.out.println("ANTES DA ORDENACAO");
 				System.out.println(Arrays.toString(n));
 				System.out.println("APOS A ORDENACAO");
-				i.shellSort(n);
+				a.shellSort(n);
 				System.out.println(Arrays.toString(n));
 				break;
 			case 7:
@@ -87,7 +88,7 @@ public class main {
 				System.out.println("ANTES DA ORDENACAO");
 				System.out.println(Arrays.toString(n));
 				System.out.println("APOS A ORDENACAO");
-				i.heapSort(n);
+				a.heapSort(n);
 				System.out.println(Arrays.toString(n));
 				break;
 			case 0:

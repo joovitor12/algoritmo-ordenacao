@@ -1,5 +1,13 @@
 
 public class Auxiliares {
+	public void inserirValores(int[] vet) {
+		Scanner in = new Scanner(System.in);
+		int i;
+		for (i = 0; i < vet.length; i++) {
+			System.out.print("[" + i + "] = ");
+			vet[i] = in.nextInt();
+		}
+	}
 	public void trocar(int[] v, int i, int j) {
 		int aux = v[i];
 		v[i] = v[j];
@@ -61,8 +69,8 @@ public class Auxiliares {
 	public void heapify( int v[],  int n,  int i) {
         // Encontra o maior entre raiz, o filho esquerdo e o filho direito.
         int largest = i;
-        final int l = 2 * i + 1;
-        final int r = 2 * i + 2;
+        int l = 2 * i + 1;
+        int r = 2 * i + 2;
 
         if (l < n && v[l] > v[largest])
             largest = l;
