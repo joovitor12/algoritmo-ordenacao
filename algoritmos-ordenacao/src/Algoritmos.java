@@ -110,16 +110,15 @@ public class Algoritmos {
 
 	}
 
-	public void heapSort(int v[]) {
-         int n = v.length;
+	public void heapSort(int v[]) {         
          Auxiliares aux = new Auxiliares();
         // Construção do Max Heap
-        for (int i = n / 2 - 1; i >= 0; i--) {
-           aux.heapify(v, n, i);
+        for (int i = v.length / 2 - 1; i >= 0; i--) {
+           aux.heapify(v, v.length, i);
         }
 
         // Heap Sort
-        for (int i = n - 1; i >= 0; i--) {
+        for (int i = v.length - 1; i >= 0; i--) {
             int temp = v[0];
             v[0] = v[i];
             v[i] = temp;

@@ -1,19 +1,6 @@
 
 public class Auxiliares {
-	public void inserirValores(int[] vet) {
-		Scanner in = new Scanner(System.in);
-		int i;
-		for (i = 0; i < vet.length; i++) {
-			System.out.print("[" + i + "] = ");
-			vet[i] = in.nextInt();
-		}
-	}
-	public void trocar(int[] v, int i, int j) {
-		int aux = v[i];
-		v[i] = v[j];
-		v[j] = aux;
-		
-	}
+	
 	public int separate(int[] v, int esq, int dir) {
 		int i = esq + 1;
 		int j = dir;
@@ -24,7 +11,7 @@ public class Auxiliares {
 			}else if(v[j] > pivot) {
 				j--;
 			}else if(i <= j) {
-				//trocar(v,i,j);
+				//trocando
 				int aux = v[i];
 				v[i] = v[j];
 				v[j] = aux;
@@ -32,7 +19,7 @@ public class Auxiliares {
 				j--;
 			}
 		}
-		//trocar(v,esq,j);
+		//trocando
 		int aux = v[esq];
 		v[esq] = v[j];
 		v[j] = aux;
@@ -68,23 +55,22 @@ public class Auxiliares {
 	}
 	public void heapify( int v[],  int n,  int i) {
         // Encontra o maior entre raiz, o filho esquerdo e o filho direito.
-        int largest = i;
+        int maior = i;
         int l = 2 * i + 1;
         int r = 2 * i + 2;
+        if (l < n && v[l] > v[maior])
+            maior = l;
 
-        if (l < n && v[l] > v[largest])
-            largest = l;
-
-        if (r < n && v[r] > v[largest])
-            largest = r;
+        if (r < n && v[r] > v[maior])
+            maior = r;
 
         // faz a substituicao e continua empilhando caso a raiz nao seja o maior.
-        if (largest != i) {
-            final int swap = v[i];
-            v[i] = v[largest];
-            v[largest] = swap;
+        if (maior != i) {
+            int troca = v[i];
+            v[i] = v[maior];
+            v[maior] = troca;
 
-            heapify(v, n, largest);
+            heapify(v, n, maior);
         }
     }
 	
